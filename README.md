@@ -1,0 +1,3 @@
+# Plant Disease Prediction
+Spring boot Application for predicting plant disease using Spring Boot.
+##### Under Development ...
