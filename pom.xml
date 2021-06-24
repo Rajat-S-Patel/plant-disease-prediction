@@ -37,6 +37,14 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- DL dependecies -->
+        <dependency>
+            <groupId>ai.djl.spring</groupId>
+            <artifactId>djl-spring-boot-starter-tensorflow-auto</artifactId>
+            <version>0.7</version>
+        </dependency>
+
     </dependencies>
 
     <build>
