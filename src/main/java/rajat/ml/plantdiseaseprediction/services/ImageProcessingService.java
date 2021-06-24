@@ -3,6 +3,7 @@ package rajat.ml.plantdiseaseprediction.services;
 import ai.djl.modality.cv.Image;
 import ai.djl.modality.cv.ImageFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,12 +17,11 @@ public class ImageProcessingService {
         this.modelService = modelService;
     }
 
-    public List<String> getLabels(){
+    public List<String> getLabels(MultipartFile file){
         Image image = null;
         ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource("sample_images/ad8770db05586b59.jpg").getFile());
         try {
-            image = ImageFactory.getInstance().fromFile(file.toPath());
+            image = ImageFactory.getInstance().fromInputStream(file.getInputStream());
         } catch (IOException e) {
             e.printStackTrace();
         }
