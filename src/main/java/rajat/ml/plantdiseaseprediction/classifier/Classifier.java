@@ -16,6 +16,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 import rajat.ml.plantdiseaseprediction.config.ModelConfig;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.io.IOException;
 import java.util.List;
 
@@ -65,6 +67,10 @@ public class Classifier {
             e.printStackTrace();
         }
         return predictions;
+    }
+    @PreDestroy
+    public void destroy(){
+        model.close();
     }
 
 }
