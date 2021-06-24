@@ -25,6 +25,13 @@ public class ModelConfig {
     @Value("#{${ml.model.thresholds}}")
     private Map<String,Float> thresholds;
 
+    @Value("${ml.model.name}")
+    private String modelName;
+
+    public String getModelName() {
+        return modelName;
+    }
+
     public Integer getInputWidth() {
         return inputWidth;
     }
