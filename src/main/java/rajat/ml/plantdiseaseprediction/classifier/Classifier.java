@@ -12,12 +12,14 @@ import ai.djl.repository.zoo.ModelZoo;
 import ai.djl.repository.zoo.ZooModel;
 import ai.djl.translate.TranslateException;
 import ai.djl.translate.Translator;
+import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 import rajat.ml.plantdiseaseprediction.config.ModelConfig;
 
 import java.io.IOException;
 import java.util.List;
 
+@Component
 public class Classifier {
     private Translator<Image,Classifications> translator;
     private Criteria<Image, Classifications> criteria;
