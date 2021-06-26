@@ -16,6 +16,17 @@
     <properties>
         <java.version>11</java.version>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>ai.djl</groupId>
+                <artifactId>bom</artifactId>
+                <version>0.11.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -38,13 +49,26 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- DL dependecies -->
         <dependency>
-            <groupId>ai.djl.spring</groupId>
-            <artifactId>djl-spring-boot-starter-tensorflow-auto</artifactId>
-            <version>0.7</version>
+            <groupId>ai.djl.tensorflow</groupId>
+            <artifactId>tensorflow-api</artifactId>
+            <version>0.11.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>ai.djl</groupId>
+            <artifactId>model-zoo</artifactId>
+            <version>0.11.0</version>
+        </dependency>
+        <dependency>
+            <groupId>ai.djl.tensorflow</groupId>
+            <artifactId>tensorflow-engine</artifactId>
+            <version>0.11.0</version>
+        </dependency>
+        <dependency>
+            <groupId>ai.djl.tensorflow</groupId>
+            <artifactId>tensorflow-native-auto</artifactId>
+            <version>2.4.1</version>
+        </dependency>
     </dependencies>
 
     <build>

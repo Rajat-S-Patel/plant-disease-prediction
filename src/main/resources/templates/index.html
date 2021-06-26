@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Prediction</title>
+    <link th:href="@{/styles/form-style.css}" rel="stylesheet">
+    <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+    <h1 class="h1 text-center">Plant Disease Prediction using Deep Learning</h1>
+    <div class="container flex-row d-flex justify-content-center text-center">
+        <div class="card col-10 justify-content-center shadow">
+            <form method="POST" enctype="multipart/form-data" action="/uploadFile">
+                <div class="file-upload">
+                    <button class="file-upload-btn" id="fileSelect" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+
+                    <div class="image-upload-wrap">
+                        <input class="file-upload-input" name="file" id="file-uploader" type='file' onchange="readURL(this);" accept="image/*" />
+                        <div class="drag-text">
+                            <h3>Drag and drop a file or select add Image</h3>
+                        </div>
+                    </div>
+                    <div class="file-upload-content">
+                        <img class="file-upload-image" src="#" alt="your image" />
+                        <div class="image-title-wrap" style="display:block">
+                            <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+                            <button type="submit" class="submit-image">submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script th:src="@{/js/form.js}"></script>
+</html>
